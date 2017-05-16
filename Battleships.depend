@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1494965971 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\main.cpp
+	<iostream>
+	<conio.h>
+	"Battlefield.h"
+	"Puppet.h"
+
+1494954307 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\battlefield.h
+	<iostream>
+
+1494954355 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\src\battlefield.cpp
+	"Battlefield.h"
+	<iostream>
+
+1494964765 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\src\puppet.cpp
+	"Puppet.h"
+
+1494963750 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\puppet.h
+	<iostream>
+
