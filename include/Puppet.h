@@ -21,6 +21,9 @@ class Puppet
         std::string get_enemyBlockSprite();
         int get_coordinatesX();
         int get_coordinatesY();
+        int get_health();
+
+        void substract_health(int damage);
 
         std::string enemyBlockSprite;
 

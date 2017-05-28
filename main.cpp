@@ -7,12 +7,14 @@ using namespace std;
 
 int main()
 {
+    int dimensionX;
+    int dimensionY;
+    dimensionX = 20;
+    dimensionY = 20;
 
-    Battlefield * battlefield = new Battlefield(20, 20);
-    int x = battlefield->get_x();
-    int y = battlefield->get_y();
+    Battlefield * battlefield = new Battlefield(dimensionX, dimensionY);
 
-    Puppet * tank = new Puppet(10,10);
+    Puppet * tank = new Puppet(dimensionX,dimensionY);
     std::string enemyBlockSprite = tank->get_enemyBlockSprite();
     int coordinatesX = tank->get_coordinatesX();
     int coordinatesY = tank->get_coordinatesY();
@@ -20,16 +22,11 @@ int main()
     battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
 
     char n = 'a';
-    char b = 'a';
-    char v = 'a';
-    char c = 'a';
 
-    while(tank->health > 0){
-            n=_getch();
-        while(n='w')
+    while(tank->get_health() > 0){
+        n=_getch();
+        if(n=='z')
         {
-            n=_getch();
-
             int x = battlefield->get_x();
             int y = battlefield->get_y();
             tank->moveUp(x,y);
@@ -38,11 +35,8 @@ int main()
             std::string enemyBlockSprite = tank->get_enemyBlockSprite();
             battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
         }
-        b=_getch();
-        while(b='a')
+        if(n=='q')
         {
-            b=_getch();
-
             int x = battlefield->get_x();
             int y = battlefield->get_y();
             tank->moveLeft(x,y);
@@ -51,11 +45,8 @@ int main()
             std::string enemyBlockSprite = tank->get_enemyBlockSprite();
             battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
         }
-        v=_getch();
-        while(v='s')
+        if(n=='s')
         {
-            v=_getch();
-
             int x = battlefield->get_x();
             int y = battlefield->get_y();
             tank->moveDown(x,y);
@@ -64,11 +55,8 @@ int main()
             std::string enemyBlockSprite = tank->get_enemyBlockSprite();
             battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
         }
-        c=_getch();
-        while(c='d')
+        if(n=='d')
         {
-            c=_getch();
-
             int x = battlefield->get_x();
             int y = battlefield->get_y();
             tank->moveRight(x,y);
