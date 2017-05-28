@@ -1,5 +1,6 @@
 #include "Battlefield.h"
 #include <iostream>
+#include <cstdlib>
 
 Battlefield::Battlefield(int x,int y){
     this->x = x;
@@ -23,22 +24,15 @@ int Battlefield::get_x()
 {
     return x;
 }
-/*void Battlefield::draw(){
-    for(int i = 0; i<y; i++){
-        std::cout << tileBlockSprite;
-            for(int j = 0; j<(x-2); j++){ //(x-1) because the last tile finishes the line
-                std::cout << tileBlockSprite;
-            }
-        std::cout << tileBlockSprite << std::endl;
-    }
-}*/
+void Battlefield::clearScreen(){
+    system("cls");
+}
 void Battlefield::draw(int cox,int coy,std::string sprite){
+    clearScreen();
     int coordinatesX = cox;
     int coordinatesY = coy;
     std::string enemyBlockSprite = sprite;
-    /*int coordinatesY = get_coordinatesY();
-    int coordinatesX = get_coordinatesX();
-    std::string enemyBlockSprite = get_enemyBlockSprite();*/
+
     for(int i = 0; i<y; i++){
             for(int j = 0; j<x; j++){
                 if(i==coordinatesY&&j==coordinatesX){
@@ -49,11 +43,6 @@ void Battlefield::draw(int cox,int coy,std::string sprite){
             }
             std::cout << std::endl;
     }
-    /*std::cout << enemyBlockSprite << std::endl;
-    for(int i = coordinatesY; i<y; i++){
-            for(int j = coordinatesX; j<x; j++){
-            }
-    }*/
 }
 
 Battlefield::~Battlefield(){
