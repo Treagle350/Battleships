@@ -15,6 +15,8 @@ class Battlefield
 
         std::string tileBlockSprite;
 
+        int** path;
+
         int get_x();
         int get_y();
         int x;

@@ -38,7 +38,7 @@ std::string** Battlefield::update(int x, int y, std::string sprite, int previous
     int ylim = get_y();
 
     if( x<xlim && y<ylim && x>0 && y>0 ){
-      field[previous_x][previous_y] = tileBlockSprite;
+      field[previous_x][previous_y] = "| |";
       field[x][y] = sprite;
       return field;
     }else{

@@ -24,7 +24,9 @@ int main()
   Puppet * tank = new Puppet(x,y);
 
     while(tank->collision(tank->get_x(),tank->get_y(),x2,y2) > 0){
-
+        if((tank->get_x()>15&&tank->get_y()>15)||(tank->get_x()<5&&tank->get_y()<5)){
+          Puppet * enemy = new Puppet(x,y,"enemy");
+        }
         n=_getch();
         if(n=='z')
         {
