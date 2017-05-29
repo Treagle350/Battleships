@@ -34,13 +34,13 @@
 1496095984 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\puppet.h
 	<iostream>
 
-1496097218 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\battlefield.cpp
+1496100267 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\battlefield.cpp
 	"Battlefield.h"
 	<iostream>
 	<cstdlib>
+	<stdio.h>
+	<stdlib.h>
 
-1496096012 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\puppet.cpp
+1496100024 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\puppet.cpp
 	"Puppet.h"
-	<chrono>
-	<thread>
 

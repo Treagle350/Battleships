@@ -1,6 +1,8 @@
 #include "Battlefield.h"
 #include <iostream>
 #include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
 Battlefield::Battlefield(int x,int y){
     this->x = x;
@@ -47,7 +49,7 @@ std::string** Battlefield::update(int x, int y, std::string sprite, int previous
 }
 void Battlefield::print(){
     clearScreen();
-
+    system("COLOR 0A");
     int xlim = get_x();
     int ylim = get_y();
 

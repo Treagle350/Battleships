@@ -1,6 +1,4 @@
 #include "Puppet.h"
-#include <chrono>
-#include <thread>
 
 Puppet::Puppet(int coordX, int coordY){
     health = 100;
