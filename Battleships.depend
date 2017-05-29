@@ -1,21 +1,46 @@
 # depslib dependency file v1.0
-1495992846 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\main.cpp
+1496041843 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\main.cpp
 	<iostream>
 	<conio.h>
 	"Battlefield.h"
 	"Puppet.h"
 
-1495991882 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\battlefield.h
+1496018912 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\battlefield.h
 	<iostream>
 
-1495993510 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\src\battlefield.cpp
+1496044717 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\src\battlefield.cpp
 	"Battlefield.h"
 	<iostream>
 	<cstdlib>
 
-1495992684 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\src\puppet.cpp
+1496052181 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\src\puppet.cpp
 	"Puppet.h"
+	<chrono>
+	<thread>
 
-1495981273 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\puppet.h
+1496052199 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\puppet.h
 	<iostream>
+
+1496096089 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\main.cpp
+	<iostream>
+	<conio.h>
+	"Battlefield.h"
+	"Puppet.h"
+	<cmath>
+
+1496090604 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\battlefield.h
+	<iostream>
+
+1496095984 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\puppet.h
+	<iostream>
+
+1496094258 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\battlefield.cpp
+	"Battlefield.h"
+	<iostream>
+	<cstdlib>
+
+1496096012 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\puppet.cpp
+	"Puppet.h"
+	<chrono>
+	<thread>
 

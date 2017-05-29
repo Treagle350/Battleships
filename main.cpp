@@ -2,71 +2,91 @@
 #include <conio.h>
 #include "Battlefield.h"
 #include "Puppet.h"
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
-    int dimensionX;
-    int dimensionY;
-    dimensionX = 20;
-    dimensionY = 20;
+  int x = 20;
+  int y = 20;
 
-    Battlefield * battlefield = new Battlefield(dimensionX, dimensionY);
+  int x2 = -1;
+  int y2 = -1;
 
-    Puppet * tank = new Puppet(dimensionX,dimensionY);
-    std::string enemyBlockSprite = tank->get_enemyBlockSprite();
-    int coordinatesX = tank->get_coordinatesX();
-    int coordinatesY = tank->get_coordinatesY();
+  char n = 'a';
 
-    battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
+  int direction;
 
-    char n = 'a';
+  Battlefield * field = new Battlefield(x,y);
+  field->print();
 
-    while(tank->get_health() > 0){
+  Puppet * tank = new Puppet(x,y);
+
+    while(tank->collision(tank->get_x(),tank->get_y(),x2,y2) > 0){
+
         n=_getch();
         if(n=='z')
         {
-            int x = battlefield->get_x();
-            int y = battlefield->get_y();
-            tank->moveUp(x,y);
-            int coordinatesX = tank->get_coordinatesX();
-            int coordinatesY = tank->get_coordinatesY();
-            std::string enemyBlockSprite = tank->get_enemyBlockSprite();
-            battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
+          int previous_x = tank->get_x();
+          int previous_y = tank->get_y();
+          direction = tank->moveUp(x,y);
+          field->update(tank->get_x(),tank->get_y(),tank->get_blockSprite(),previous_x,previous_y);
+          field->print();
         }
         if(n=='q')
         {
-            int x = battlefield->get_x();
-            int y = battlefield->get_y();
-            tank->moveLeft(x,y);
-            int coordinatesX = tank->get_coordinatesX();
-            int coordinatesY = tank->get_coordinatesY();
-            std::string enemyBlockSprite = tank->get_enemyBlockSprite();
-            battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
+          int previous_x = tank->get_x();
+          int previous_y = tank->get_y();
+          direction = tank->moveLeft(x,y);
+          field->update(tank->get_x(),tank->get_y(),tank->get_blockSprite(),previous_x,previous_y);
+          field->print();
         }
         if(n=='s')
         {
-            int x = battlefield->get_x();
-            int y = battlefield->get_y();
-            tank->moveDown(x,y);
-            int coordinatesX = tank->get_coordinatesX();
-            int coordinatesY = tank->get_coordinatesY();
-            std::string enemyBlockSprite = tank->get_enemyBlockSprite();
-            battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
+          int previous_x = tank->get_x();
+          int previous_y = tank->get_y();
+          direction = tank->moveDown(x,y);
+          field->update(tank->get_x(),tank->get_y(),tank->get_blockSprite(),previous_x,previous_y);
+          field->print();
         }
         if(n=='d')
         {
-            int x = battlefield->get_x();
-            int y = battlefield->get_y();
-            tank->moveRight(x,y);
-            int coordinatesX = tank->get_coordinatesX();
-            int coordinatesY = tank->get_coordinatesY();
-            std::string enemyBlockSprite = tank->get_enemyBlockSprite();
-            battlefield->draw(coordinatesX,coordinatesY,enemyBlockSprite);
+          int previous_x = tank->get_x();
+          int previous_y = tank->get_y();
+          direction = tank->moveRight(x,y);
+          field->update(tank->get_x(),tank->get_y(),tank->get_blockSprite(),previous_x,previous_y);
+          field->print();
+        }
+        if(n=='k')
+        {
+          Puppet * projectile = new Puppet((tank->get_x()),(tank->get_y()),x,y);
+          int previous_x = projectile->get_x();
+          int previous_y = projectile->get_y();
+          switch(direction){
+            case 0:
+              projectile->moveDown(x,y);
+              break;
+            case 1:
+              projectile->moveUp(x,y);
+              break;
+            case 2:
+              projectile->moveLeft(x,y);
+              break;
+            case 3:
+              projectile->moveRight(x,y);
+              break;
+            default:
+              break;
+          }
+          field->update(projectile->get_x(),projectile->get_y(),"|O|",previous_x,previous_y);
+          field->print();
+          x2 = projectile->get_x();
+          y2 = projectile->get_y();
         }
     }
-    std::cout << "Game Over !" << std::endl;
+    field->gameOver();
+    tank->~Puppet();
     //~Puppet();
     return 0;
 }

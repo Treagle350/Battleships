@@ -8,13 +8,12 @@ class Battlefield
         Battlefield(int x,int y);
         virtual ~Battlefield();
 
-        int** field;
+        std::string** update(int x, int y, std::string sprite, int previous_x, int previous_y);
+        void print();
 
-        void draw(int cox,int coy,std::string sprite);
+        void gameOver();
 
         std::string tileBlockSprite;
-
-        void clearScreen();
 
         int get_x();
         int get_y();
@@ -23,7 +22,9 @@ class Battlefield
     protected:
 
     private:
-        void initialize();
+        void initialize(int x,int y);
+        void clearScreen();
+
+        std::string** field;
 
 };
-

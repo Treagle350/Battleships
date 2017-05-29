@@ -1,16 +1,40 @@
 #include "Puppet.h"
+#include <chrono>
+#include <thread>
 
 Puppet::Puppet(int coordX, int coordY){
     health = 100;
-    attackingPower = 50;
-    enemyBlockSprite = "|^|";
+    //attackingPower = 50;
+    blockSprite = "|^|";
     set_coordinates(coordX/2,coordY/2,coordX,coordY);
 }
-std::string Puppet::get_enemyBlockSprite()
-{
-    return enemyBlockSprite;
+Puppet::Puppet(int coordX, int coordY,std::string enemy){
+    health = 100;
+    //attackingPower = 50;
+    blockSprite = "|X|";
+    set_coordinates(coordX/2,coordY/2,coordX,coordY);
 }
-int Puppet::get_coordinatesY()
+Puppet::Puppet(int x,int y,int coordX, int coordY){
+    health = 100;
+    //attackingPower = 50;
+    blockSprite = "|O|";
+    set_coordinates(x,y,coordX,coordY);
+}
+int Puppet::collision(int x1,int y1,int x2,int y2){
+  if(x1==x2 && y1==y2){
+    substract_health(100);
+  }
+  return health;
+}
+std::string Puppet::get_blockSprite()
+{
+    return blockSprite;
+}
+int Puppet::get_x()
+{
+    return coordinatesX;
+}
+int Puppet::get_y()
 {
     return coordinatesY;
 }
@@ -22,49 +46,46 @@ void Puppet::substract_health(int damage)
 {
     health = health - damage;
 }
-int Puppet::get_coordinatesX()
-{
-    return coordinatesX;
-}
 void Puppet::set_coordinates(int posX,int posY,int x,int y){
-    if(posX <= x && posY <= y && posX >= 0 && posY >= 0){
+    if(posX < x && posY < y && posX >= 0 && posY >= 0){
         coordinatesX = posX;
         coordinatesY = posY;
     }else{
         substract_health(100);
     }
 }
-void Puppet::moveUp(int x, int y){
-    enemyBlockSprite = "|^|";
+int Puppet::moveUp(int x, int y){
+    blockSprite = "|^|";
+    direction = 1;
     coordinatesX = coordinatesX + 0;
     coordinatesY = coordinatesY - 1;
     set_coordinates(coordinatesX,coordinatesY,x,y);
+    return direction;
 }
-void Puppet::moveDown(int x, int y){
-    enemyBlockSprite = "|v|";
+int Puppet::moveDown(int x, int y){
+    blockSprite = "|v|";
+    direction = 0;
     coordinatesX = coordinatesX + 0;
     coordinatesY = coordinatesY + 1;
     set_coordinates(coordinatesX,coordinatesY,x,y);
+    return direction;
 }
-void Puppet::moveLeft(int x, int y){
-    enemyBlockSprite = "|<|";
+int Puppet::moveLeft(int x, int y){
+    blockSprite = "|<|";
+    direction = 2;
     coordinatesX = coordinatesX - 1;
     coordinatesY = coordinatesY + 0;
     set_coordinates(coordinatesX,coordinatesY,x,y);
+    return direction;
 }
-void Puppet::moveRight(int x, int y){
-    enemyBlockSprite = "|>|";
+int Puppet::moveRight(int x, int y){
+    blockSprite = "|>|";
+    direction = 3;
     coordinatesX = coordinatesX + 1;
     coordinatesY = coordinatesY - 0;
     set_coordinates(coordinatesX,coordinatesY,x,y);
+    return direction;
 }
-/*
-void Puppet::attack(){
-    hp = get.targetHealth();
-    hp = hp - attackingPower;
-    set.targetHealth(hp);
-}
-*/
 Puppet::~Puppet(){
 
 }
