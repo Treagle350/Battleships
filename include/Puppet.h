@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+#include <vector>
 
 class Puppet
 {
@@ -23,6 +23,13 @@ class Puppet
         int coordinatesX;
         int coordinatesY;
 
+        int generateSeed(int sizeArraylist);
+        int get_Arraysize();
+        int accessPathX(int seed);
+        int accessPathY(int seed);
+
+        void set_coordinates(int posX, int posY, int x, int y);
+
         std::string get_blockSprite();
         int get_x();
         int get_y();
@@ -38,5 +45,11 @@ class Puppet
         int attackingPower;
         int direction;
 
-        void set_coordinates(int posX, int posY, int x, int y);
+        int seed;
+
+        std::vector<int> pathX;
+        std::vector<int> pathY;
+
+        void writePathX(int x1);
+        void writePathY(int y1);
 };

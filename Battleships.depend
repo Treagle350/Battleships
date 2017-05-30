@@ -21,18 +21,19 @@
 1496052199 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships\include\puppet.h
 	<iostream>
 
-1496096786 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\main.cpp
+1496151507 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\main.cpp
 	<iostream>
 	<conio.h>
 	"Battlefield.h"
 	"Puppet.h"
 	<cmath>
 
-1496097463 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\battlefield.h
+1496106930 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\battlefield.h
 	<iostream>
 
-1496095984 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\puppet.h
+1496149099 c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\include\puppet.h
 	<iostream>
+	<vector>
 
 1496100267 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\battlefield.cpp
 	"Battlefield.h"
@@ -41,6 +42,9 @@
 	<stdio.h>
 	<stdlib.h>
 
-1496100024 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\puppet.cpp
+1496151177 source:c:\users\jens\workspace\vives\oop\oop c++\projects\battleships - test\src\puppet.cpp
 	"Puppet.h"
+	<vector>
+	<cstdlib>
+	<ctime>
 
